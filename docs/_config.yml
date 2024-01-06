@@ -26,8 +26,12 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site settings
 title: Uknow Official Site
 email: uknow.fam@gmail.com
+author: Uknow
+copyright: "(cleft) {currentYear} {author}"
+
 description: >- # this means to ignore newlines until "baseurl:"
   This site is Uknow official wiki page. Uknow team will change the world someday.
+
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://uknowofficial.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: UknowOfficial
