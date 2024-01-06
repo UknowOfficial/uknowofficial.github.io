@@ -47,7 +47,7 @@ GitHub Pages x Jekyllのセットアップ方法に関する記事です。Jekyl
 
 
 
-# GitHub Pages x Jekyllのセットアップ
+## GitHub Pages x Jekyllのセットアップ
 
 GitHub Pagesの公式ページ「[GitHub Pages サイトを作成する](https://docs.github.com/ja/pages/getting-started-with-github-pages/creating-a-github-pages-site)」を参考にしながら進めていきます。  
 ※今回は無料アカウントなのでパブリックリポジトリで設定します
@@ -55,7 +55,7 @@ GitHub Pagesの公式ページ「[GitHub Pages サイトを作成する](https:/
 > 注意事項
 GitHub Pagesは、GitHub Free及びOrganizationのGitHub Freeのパブリックリポジトリ、GitHub Pro、GitHub Team、GitHub Enterprise Cloud、GitHub Enterprise Serverのパブリック及びプライベートリポジトリで利用できます。
 
-## リポジトリを作成
+### リポジトリを作成
 
 1. `<user>.github.io` または `<organization>.github.io` という名前のリポジトリを新規作成します。  
     今回は次のリポジトリ名で設定しました:  
@@ -73,7 +73,7 @@ mainリポジトリにPushされたことをトリガにページを公開する
     - Folder : /docs
 
 
-## Collaboratorsの設定
+### Collaboratorsの設定
 
 `UknowOfficial/uknowofficial.github.io`のリポジトリ設定で、各メンバーが各自のGithubアカウントから編集できるように招待します。
 
@@ -83,11 +83,11 @@ mainリポジトリにPushされたことをトリガにページを公開する
 > [新しいMacでGitHubのSSH接続をするまでの環境構築手順 #Git - Qiita](https://qiita.com/unsoluble_sugar/items/14bea376d8e6fce82eb3)
 
 
-## Jekyllでページレイアウト設定
+### Jekyllでページレイアウト設定
 
 Jekyllを使ってサイトの見た目をカスタマイズすることができます。[jeffreytse/jekyll-theme-yat](https://github.com/jeffreytse/jekyll-theme-yat/tree/master)のテーマを利用して進めていきます。
 
-### Ruby開発環境のセットアップ
+#### Ruby開発環境のセットアップ
 
 [Jekyll公式サイト](https://jekyllrb-ja.github.io/docs/installation/)からOS環境を選択して、Ruby環境を設定してください
 
@@ -95,7 +95,7 @@ Jekyllを使ってサイトの見た目をカスタマイズすることがで�
 > * `$ ruby -v` で`2.5.0`以上のバージョンであればOKです。
 > * Rubyは、rbenvでバージョン管理すると便利です。rbenvでのセットアップ方法は「[rbenvでrubyのバージョンを管理する #Ruby - Qiita](https://qiita.com/hujuu/items/3d600f2b2384c145ad12)」を参照してください
 
-### Jekyllのインストール
+#### Jekyllのインストール
 
 jekyllとbundler gemsをインストールします。
 
@@ -103,7 +103,7 @@ jekyllとbundler gemsをインストールします。
 $ sudo gem install jekyll bundler
 ```
 
-### リポジトリをローカルにclone
+#### リポジトリをローカルにclone
 
 [リポジトリを作成](#リポジトリを作成)で作成した、リポジトリをローカルにcloneして、必要ファイルを修正しつつ、bundleしていきます。
 
@@ -115,7 +115,7 @@ $ cd docs
 $ jekyll new --skip-bundle .
 ```
 
-### Gemfileの修正
+#### Gemfileの修正
 
 上記で生成されたGemfileを編集し、github-pagesに対応させる
 変更箇所は以下：  
@@ -133,7 +133,7 @@ group :jekyll_plugins do
 end
 ```
 
-### _config.ymlの修正
+#### _config.ymlの修正
 
 下記内容に編集します
 
@@ -163,7 +163,7 @@ plugins:
   - jekyll-yat
 ```
 
-### 必要フォルダ・ファイルの作成
+#### 必要フォルダ・ファイルの作成
 
 [jeffreytse/jekyll-theme-yatのリポジトリ](https://github.com/jeffreytse/jekyll-theme-yat/tree/master)をCloneしてきて、`_data`,`_layouts`, `_includes`,`_sass`,`assets`をフォルダごとそのまま、`uknowofficial.github.io/docs`以下にコピーします。中身はこの後適宜変更していきますので、とりあえず全てそのままでOKです。
 
@@ -185,9 +185,9 @@ plugins:
 └── index.md
 ```
 
-# ホーム画面のカスタマイズ
+## ホーム画面のカスタマイズ
 
-## タイトルの変更
+### タイトルの変更
 
 1. ページタブに表示されるタイトルの変更
 
@@ -212,7 +212,7 @@ title: Uknow Official Site
 
 
 
-## フッターの修正
+### フッターの修正
 
 `_includes/views/footer.html`を任意の内容に修正
 
@@ -223,7 +223,7 @@ copyright: "(cleft) {currentYear} {author}"
 ```
 
 
-## ホーム画像の変更
+### ホーム画像の変更
 
 ホーム画面のバナー画像を挿入する場合、以下の構成で画像ファイルを格納し、`docs/_data/defaults.yml`￥の`banner`パラメータで相対パスを指定してあげることで設定できます。
 
@@ -235,7 +235,7 @@ copyright: "(cleft) {currentYear} {author}"
             └── home.jpeg
 ```
 
-## リンク用にSNSアイコンなどを表示させたい
+### リンク用にSNSアイコンなどを表示させたい
 
 [Octicons | Primer](https://primer.style/foundations/icons)を利用できます。OctiｃonsはGitHubのサイト内で利用されている様々なアイコンを提供しているサイトです。利用したいアイコンの「Copy SVG」ボタンをクリックして、SVG形式のタグを取得できるので、HTML内の任意の場所にペーストすればそのまま利用できます。
 
