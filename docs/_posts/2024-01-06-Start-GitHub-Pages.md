@@ -3,7 +3,7 @@ layout: post
 title:  "Start Gihub Pages"
 date:   2024-01-06 09:24:13 +0900
 categories: github-pages
-excerpt_image: 
+excerpt_image: https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-01-06-GithubPages-003.png?raw=true
 tags: [setup]
 ---
 
