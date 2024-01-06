@@ -70,14 +70,14 @@ _config.yml
 title: Uknow Official Site
 ```
 
-![](../2024-01-06-GithubPages-001.png)
+![](/assets/images/post/2024-01-06-GithubPages-001.png)
 
 
 1. TOPページ内のタイトル, サブタイトルの変更
 
 `docs/_data/defaults.yml`を任意の内容に修正
 
-![](../assets/images/post/2024-01-06-GithubPages-002.png)
+![](/assets/images/post/2024-01-06-GithubPages-002.png)
 
 
 
@@ -92,9 +92,9 @@ copyright: "(cleft) {currentYear} {author}"
 ```
 
 
+## ホーム画像の変更
 
-
-ホーム画面のバナー画像を挿入する場合、以下の構成で画像ファイルを格納し、`index.markdown`の`banner`パラメータで相対パスを指定してあげることで設定できます。
+ホーム画面のバナー画像を挿入する場合、以下の構成で画像ファイルを格納し、`docs/_data/defaults.yml`￥の`banner`パラメータで相対パスを指定してあげることで設定できます。
 
 ```
 .
@@ -104,14 +104,8 @@ copyright: "(cleft) {currentYear} {author}"
             └── home.jpeg
 ```
 
-```html
-<!-- index.markdwon -->
----
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+## リンク用にSNSアイコンなどを表示させたい
 
-layout: home
-title: Home
-banner: "/assets/images/banners/home.png"
----
-```
+[Octicons | Primer](https://primer.style/foundations/icons)を利用できます。OctiｃonsはGitHubのサイト内で利用されている様々なアイコンを提供しているサイトです。利用したいアイコンの「Copy SVG」ボタンをクリックして、SVG形式のタグを取得できるので、HTML内の任意の場所にペーストすればそのまま利用できます。
+
+
