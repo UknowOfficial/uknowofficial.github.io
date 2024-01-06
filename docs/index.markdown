@@ -4,6 +4,6 @@
 
 layout: home
 title: Home
-banner: "/assets/images/banners/home.png"
-author_profile: true
+# banner: "/assets/images/banners/home.png"
+# author_profile: true
 ---
