@@ -237,6 +237,6 @@ copyright: "(cleft) {currentYear} {author}"
 
 ### リンク用にSNSアイコンなどを表示させたい
 
-[Octicons | Primer](https://primer.style/foundations/icons)を利用できます。OctiｃonsはGitHubのサイト内で利用されている様々なアイコンを提供しているサイトです。利用したいアイコンの「Copy SVG」ボタンをクリックして、SVG形式のタグを取得できるので、HTML内の任意の場所にペーストすればそのまま利用できます。
+[Octicons - Primer](https://primer.style/foundations/icons)を利用できます。OctiｃonsはGitHubのサイト内で利用されている様々なアイコンを提供しているサイトです。利用したいアイコンの「Copy SVG」ボタンをクリックして、SVG形式のタグを取得できるので、HTML内の任意の場所にペーストすればそのまま利用できます。
 
 
