@@ -3,7 +3,7 @@ layout: post
 title:  "AWS CloudFront x S3 で静的WEBサイトを公開してみる"
 date:   2024-05-02
 categories: aws
-excerpt_image: 
+excerpt_image: https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-05-03-AwsWebsite-009.png?raw=true
 tags: [EC2]
 ---
 
