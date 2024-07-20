@@ -173,6 +173,7 @@ S3の静的WEBサイトをCloudFrontからアクセスできるようにする�
     1. 名前解決反映の確認
         AWSのネームサーバーで名前解決されていることをコマンドラインから確認します
         ※10分ほどで反映されました
+        
     ```shell
     $ nslookup -type=NS uknownews.net
     Server:		******
