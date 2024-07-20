@@ -7,16 +7,28 @@ excerpt_image:
 tags: [EC2]
 ---
 
-
-
 AWS CloudFrontとS3を使ってWEBサイトを公開してみます。
+本ページでは、独自ドメインを使ったHTTPS通信の設定までを実施します。
 
-参考サイト：
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [参考サイト：](#参考サイト)
+- [STEP1: S3バケットの作成](#step1-s3バケットの作成)
+- [STEP2: S3のみでWEBサイト公開](#step2-s3のみでwebサイト公開)
+- [STEP3: CloudFront x S3 でWEBサイト公開](#step3-cloudfront-x-s3-でwebサイト公開)
+- [独自ドメインを設定](#独自ドメインを設定)
+- [接続の確認](#接続の確認)
+
+<!-- /code_chunk_output -->
+
+
+
+## 参考サイト：
 - [S3のWEBサイトをCloudFrontからのみアクセス可能にする - おかげデザインBlog](https://mik2062.jp/s3-cloudfront/)
 - [CloudFrontとS3で作成する静的サイト構成の私的まとめ - DevelopersIO](https://dev.classmethod.jp/articles/s3-cloudfront-static-site-design-patterns-2022/)
-
-
-参照サイト：
 - [料金 - Amazon CloudFront - AWS](https://aws.amazon.com/jp/cloudfront/pricing/)
 
 
@@ -24,7 +36,7 @@ WEBサイトのテンプレートとしてここから持ってきます
 [全て無料 レスポンシブホームページテンプレート（全120件）｜ Template Party](https://template-party.com/db_template/?act=list&kind=1&info6=%E5%80%8B%E4%BA%BA%E3%82%B5%E3%82%A4%E3%83%88%E5%90%91%E3%81%91)
 
 
-# STEP1: S3バケットの作成
+## STEP1: S3バケットの作成
 
 設定は以下の感じにしました
 
@@ -39,7 +51,7 @@ ACL:無効
 オブジェクトロック：無効
 
 
-# STEP2: S3のみでWEBサイト公開
+## STEP2: S3のみでWEBサイト公開
 
 まずは、[S3 静的ウェブサイトホスティング](https://docs.aws.amazon.com/ja_jp/AmazonS3/latest/userguide/WebsiteHosting.html)の機能を利用してS3だけでHTMLを公開してみます。ただこのやり方だと、HTTPSをサポートしていないのでHTTPのみ対応となるので、HTTPSを使用したい場合は、次で説明するCloudFrontを使用する必要があります。
 
@@ -75,7 +87,7 @@ ACL:無効
 
 ![image001](https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-05-03-AwsWebsite-001.png?raw=true)
 
-# STEP3: CloudFront x S3 でWEBサイト公開
+## STEP3: CloudFront x S3 でWEBサイト公開
 
 S3の静的WEBサイトをCloudFrontからアクセスできるようにする手順。独自ドメインが不要であればここまででOKです。
 
@@ -134,7 +146,7 @@ S3の静的WEBサイトをCloudFrontからアクセスできるようにする�
 ![image003](https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-05-03-AwsWebsite-003.png?raw=true)
 
 
-# 独自ドメインを設定
+## 独自ドメインを設定
 
 お名前.comで取得した独自ドメインでアクセスできるように設定する方法を説明していきます。
 
@@ -222,7 +234,7 @@ AWSが提供するDNSサービスの一つです。AWSでドメインを購入�
 DNSサーバー（ネームサーバー）とは、ドメイン名とIPアドレスを紐付けるための仕組みを提供するサーバーのことです。
 [DNSサーバー（ネームサーバー）とは｜仕組みや設定・確認の方法を解説](https://www.gmo.jp/security/brandsecurity/dns/blog/dns-server/)
 
-# 接続の確認
+## 接続の確認
 
 "uknownews.net" にアクセスしてみるとちゃんとサンプルページが表示されることが確認できました。証明書も有効でちゃんと動作していることも確認ができます。
 
