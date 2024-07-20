@@ -13,11 +13,11 @@ AWS CloudFrontとS3を使ってWEBサイトを公開してみます。
 
 参考サイト：
 - [S3のWEBサイトをCloudFrontからのみアクセス可能にする - おかげデザインBlog](https://mik2062.jp/s3-cloudfront/)
-- [CloudFrontとS3で作成する静的サイト構成の私的まとめ | DevelopersIO](https://dev.classmethod.jp/articles/s3-cloudfront-static-site-design-patterns-2022/)
+- [CloudFrontとS3で作成する静的サイト構成の私的まとめ - DevelopersIO](https://dev.classmethod.jp/articles/s3-cloudfront-static-site-design-patterns-2022/)
 
 
 参照サイト：
-- [料金 - Amazon CloudFront | AWS](https://aws.amazon.com/jp/cloudfront/pricing/)
+- [料金 - Amazon CloudFront - AWS](https://aws.amazon.com/jp/cloudfront/pricing/)
 
 
 WEBサイトのテンプレートとしてここから持ってきます
@@ -73,8 +73,7 @@ ACL:無効
 1. サイトへアクセス
     これで "http://pp-jp-web-s3-pub-00.s3-website-ap-northeast-1.amazonaws.com" にアクセスするとindex.htmlの内容が表示されます。
 
-![image001](../assets/images/post/2024-05-03-AwsWebsite-001.png)
-
+![image001](https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-05-03-AwsWebsite-001.png?raw=true)
 
 # STEP3: CloudFront x S3 でWEBサイト公開
 
@@ -96,7 +95,7 @@ S3の静的WEBサイトをCloudFrontからアクセスできるようにする�
     - オリジンアクセス
         `Origin access control settings (recommended)`を選択
         Create new OACで対象S3バケットを指定
-        ![image002](../assets/images/post/2024-05-03-AwsWebsite-002.png)
+        ![image002](https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-05-03-AwsWebsite-002.png?raw=true)
     - デフォルトのキャッシュビヘイビア
         HTTPS onlyに設定
     - WAF
@@ -132,7 +131,7 @@ S3の静的WEBサイトをCloudFrontからアクセスできるようにする�
     ```
 1. ディストリビューションドメイン名で、ブラウザアクセスするとHTMLの内容が必要されます
 
-![image003](../assets/images/post/2024-05-03-AwsWebsite-003.png)
+![image003](https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-05-03-AwsWebsite-003.png?raw=true)
 
 
 # 独自ドメインを設定
@@ -149,7 +148,7 @@ S3の静的WEBサイトをCloudFrontからアクセスできるようにする�
 1. ホストゾーンの作成
     1. ドメイン名を入力
     1. パブリックホストゾーンを選択
-    ![image004](../assets/images/post/2024-05-03-AwsWebsite-004.png)
+    ![image004](https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-05-03-AwsWebsite-004.png?raw=true)
 1. Route53のホストゾーンとお名前.comの独自ドメインとを紐付け
     1. お名前.comにログイン
     1. 対象ドメインを選択し、ネームサーバーの変更を選択
@@ -158,7 +157,7 @@ S3の静的WEBサイトをCloudFrontからアクセスできるようにする�
     ※末尾の「.」は不要です
     1. 登録完了画面が表示されればOK
     （※反映までに24時間程度かかるそう）
-    ![image005](../assets/images/post/2024-05-03-AwsWebsite-005.png)
+    ![image005](https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-05-03-AwsWebsite-005.png?raw=true)
     1. 名前解決反映の確認
         AWSのネームサーバーで名前解決されていることをコマンドラインから確認します
         ※10分ほどで反映されました
@@ -186,7 +185,7 @@ S3の静的WEBサイトをCloudFrontからアクセスできるようにする�
             - *.uknownews.net
         - 検証方法：DNS検証
         - キーアルゴリズム：RSA 2048
-    ![ACMサーバー証明書](../assets/images/post/2024-05-03-AwsWebsite-006.png)
+    ![ACMサーバー証明書](https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-05-03-AwsWebsite-006.png?raw=true)
     1. Route53でCNAMEレコードの作成
         リクエスト後、作成した証明書のCNAME名とCNAME値が出てきますので「Route53でレコードを作成」を押下します。
     1. しばらくするとACMの対象証明書のステータスが「発行済み」に切り替わります
@@ -197,7 +196,7 @@ S3の静的WEBサイトをCloudFrontからアクセスできるようにする�
         - uknownews.net
         - www.uknownews.net
     1. Custom SSL certificateで上記ACMで発行した証明書を選択します
-    ![image007](../assets/images/post/2024-05-03-AwsWebsite-007.png)
+    ![image007](https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-05-03-AwsWebsite-007.png?raw=true)
 1. DNSレコードの作成
     1. Route53にアクセス
     1. レコードを作成をクリック
@@ -205,7 +204,7 @@ S3の静的WEBサイトをCloudFrontからアクセスできるようにする�
 
 1. Route53とCloudFrontを紐付け
 
-![image008](../assets/images/post/2024-05-03-AwsWebsite-008.png)
+![image008](https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-05-03-AwsWebsite-008.png?raw=true)
 
 
 Route53とは？
@@ -227,5 +226,5 @@ DNSサーバー（ネームサーバー）とは、ドメイン名とIPアドレ
 
 "uknownews.net" にアクセスしてみるとちゃんとサンプルページが表示されることが確認できました。証明書も有効でちゃんと動作していることも確認ができます。
 
-![image009](../assets/images/post/2024-05-03-AwsWebsite-009.png)
+![image009](https://github.com/UknowOfficial/uknowofficial.github.io/blob/main/docs/assets/images/post/2024-05-03-AwsWebsite-009.png?raw=true)
 
